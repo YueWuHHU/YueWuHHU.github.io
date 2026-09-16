@@ -1,16 +1,340 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YueWuHHU 的个人主页</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="吴越（Yue Wu）的个人主页：应用经济学、数据分析、计算机科学、研究项目与实践经历。" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>吴越 | Yue Wu</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <h1>Hello 👋</h1>
-    <h2>我是 YueWuHHU</h2>
-    <p>欢迎来到我的个人主页！</p>
-</body>
+  <div class="noise"></div>
 
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="返回首页">
+        <span class="brand-mark">YW</span>
+        <span class="brand-name">Yue Wu</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="打开导航" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav">
+        <a href="#about">关于</a>
+        <a href="#education">教育</a>
+        <a href="#research">研究</a>
+        <a href="#experience">经历</a>
+        <a href="#awards">荣誉</a>
+        <a href="#contact">联系</a>
+        <button class="theme-btn" id="themeBtn" aria-label="切换深浅色模式">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">APPLIED ECONOMICS · DATA · COMPUTING</p>
+          <h1>你好，我是<span>吴越</span><br><small>Yue Wu</small></h1>
+          <p class="hero-lead">
+            河海大学应用经济学硕士研究生。拥有国际经济与贸易、计算机科学与技术的复合学习背景，
+            关注资源配置、绿色发展、公共数据与因果推断，也持续参与数据分析、政策研究与实践项目。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#research">查看研究与项目</a>
+            <a class="btn ghost" href="#contact">联系我</a>
+          </div>
+
+          <div class="quick-facts">
+            <div>
+              <strong>Economics</strong>
+              <span>应用经济学 / 国际经济与贸易</span>
+            </div>
+            <div>
+              <strong>Computing</strong>
+              <span>计算机科学与技术</span>
+            </div>
+            <div>
+              <strong>Methods</strong>
+              <span>Stata / Python / Matlab</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card reveal">
+          <div class="portrait-wrap">
+            <img src="assets/avatar.jpg" alt="吴越头像" class="portrait" />
+          </div>
+          <div class="profile-meta">
+            <h2>吴越 <span>Yue Wu</span></h2>
+            <p>河海大学 · 经济与金融学院</p>
+            <p>应用经济学硕士研究生</p>
+          </div>
+          <div class="profile-links">
+            <a href="mailto:241321020003@hhu.edu.cn">Email</a>
+            <a href="https://github.com/YueWuHHU" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="container narrow reveal">
+        <div class="section-heading">
+          <p class="eyebrow">ABOUT</p>
+          <h2>关于我</h2>
+        </div>
+        <p class="about-text">
+          我的学习经历横跨经济学与计算机科学，目前在河海大学攻读应用经济学硕士学位。
+          我更喜欢把问题放到“经济机制 + 数据证据 + 计算工具”的交叉框架中理解：
+          从资源错配、绿色发展，到公共数据开放与城市发展，再到可复现的数据处理与模型实现。
+        </p>
+
+        <div class="interest-grid">
+          <article class="mini-card">
+            <span>01</span>
+            <h3>资源与效率</h3>
+            <p>资源错配、生产效率、土地资源配置与区域差异。</p>
+          </article>
+          <article class="mini-card">
+            <span>02</span>
+            <h3>绿色发展</h3>
+            <p>绿色全要素生产率、农业碳排放效率与可持续发展。</p>
+          </article>
+          <article class="mini-card">
+            <span>03</span>
+            <h3>数据与因果</h3>
+            <p>公共数据开放、DID、双重机器学习以及实证经济分析。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">EDUCATION</p>
+          <h2>教育背景</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="time">2024.09 — 至今</div>
+            <div class="timeline-card">
+              <h3>经济学硕士 · 应用经济学</h3>
+              <p class="org">河海大学 · 经济与金融学院</p>
+              <p>推免攻读硕士学位。</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="time">2020.09 — 2024.06</div>
+            <div class="timeline-card">
+              <h3>经济学学士 · 国际经济与贸易</h3>
+              <p class="org">河海大学 · 经济与金融学院</p>
+              <p>本科毕业论文：<strong>《中国城市资源错配、产出缺口测算及影响研究》</strong>，获河海大学优秀本科毕业论文。</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="time">2021.09 — 2024.06</div>
+            <div class="timeline-card">
+              <h3>工学学士（双学位）· 计算机科学与技术</h3>
+              <p class="org">河海大学 · 物联网工程学院</p>
+              <p>毕业论文：<strong>《基于网络爬虫的国有土地使用权出让监测及可视化平台》</strong>。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="research">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">RESEARCH & PROJECTS</p>
+          <h2>研究与项目</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card featured">
+            <div class="tag">国家社科基金 · 参与</div>
+            <h3>碳排放约束下中国土地资源错配测度及治理研究</h3>
+            <p>参与数理模型建立、相关数据搜集与测算，并分析资源错配的时空演变规律。</p>
+            <div class="meta-row"><span>2023.07 — 至今</span><span>Research</span></div>
+          </article>
+
+          <article class="feature-card">
+            <div class="tag">城市创新研究</div>
+            <h3>常州市两湖创新区创新发展研究</h3>
+            <p>参与项目投标书、结项论文框架与政策建议撰写，并承担通稿、修改与文本优化工作。</p>
+            <div class="meta-row"><span>2022.07 — 2022.08</span><span>Policy</span></div>
+          </article>
+
+          <article class="feature-card">
+            <div class="tag">统计研究</div>
+            <h3>常州市第七次人口普查居住情况研究</h3>
+            <p>参与常州市统计局相关研究项目。</p>
+            <div class="meta-row"><span>2021.12 — 2022.01</span><span>Data</span></div>
+          </article>
+        </div>
+
+        <div class="subheading-row">
+          <h3>代表性论文与工作论文</h3>
+          <span>Selected Publications & Working Papers</span>
+        </div>
+
+        <div class="paper-list">
+          <article class="paper">
+            <span class="paper-year">2026</span>
+            <div>
+              <h4>地方债务与企业绿色发展效率</h4>
+              <p>《管理评论》38(7): 191–204 · CSSCI 核心</p>
+            </div>
+          </article>
+
+          <article class="paper">
+            <span class="paper-year">2025</span>
+            <div>
+              <h4>公共数据开放与经济高质量发展——来自政府数据平台上线的准自然实验</h4>
+              <p>《湖北经济学院学报》23(5): 15–30 · 通讯作者</p>
+            </div>
+          </article>
+
+          <article class="paper">
+            <span class="paper-year">2023</span>
+            <div>
+              <h4>长江经济带农业生产效率和碳排放水平耦合协调发展研究</h4>
+              <p>《江西农业学报》35(06): 149–157 · 科技核心</p>
+            </div>
+          </article>
+
+          <article class="paper">
+            <span class="paper-year">2023</span>
+            <div>
+              <h4>中国农业生产效率测算及区域差异研究——基于三阶段 DEA 和 Dagum 基尼系数的分析</h4>
+              <p>《江西农业学报》35(06): 186–193 · 科技核心</p>
+            </div>
+          </article>
+
+          <article class="paper">
+            <span class="paper-year">2023</span>
+            <div>
+              <h4>农业机械化对我国农业碳排放效率的影响——基于 Super-SBM-Tobit 模型</h4>
+              <p>《环境生态学》5(10): 53–61 · 科技核心</p>
+            </div>
+          </article>
+
+          <article class="paper working">
+            <span class="paper-year">WP</span>
+            <div>
+              <h4>碳排放约束下中国城市土地资源错配的统计测度</h4>
+              <p>工作论文 · 数理模型、时空演变、泰尔指数、收敛与马尔科夫转移。</p>
+            </div>
+          </article>
+
+          <article class="paper working">
+            <span class="paper-year">WP</span>
+            <div>
+              <h4>公共数据开放如何促进城市绿色发展——基于双重差分和双重机器学习的因果推断</h4>
+              <p>工作论文 · DID 与 DDML。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">EXPERIENCE</p>
+          <h2>实践经历</h2>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card">
+            <div class="exp-top"><span>2025.07 — 2025.08</span><b>政府部门</b></div>
+            <h3>综合办公室实习生</h3>
+            <p>黄石市商务局</p>
+          </article>
+
+          <article class="experience-card">
+            <div class="exp-top"><span>2024.07 — 2024.08</span><b>产业实践</b></div>
+            <h3>招商办公室实习生</h3>
+            <p>黄石市长乐山工业园区</p>
+          </article>
+
+          <article class="experience-card">
+            <div class="exp-top"><span>2023.07 — 2023.08</span><b>金融实践</b></div>
+            <h3>丽华支行实习生</h3>
+            <p>江苏银行常州分行</p>
+          </article>
+
+          <article class="experience-card">
+            <div class="exp-top"><span>2022.07 — 2022.08</span><b>统计实践</b></div>
+            <h3>综合调查队实习生</h3>
+            <p>常州市新北区统计局</p>
+          </article>
+        </div>
+
+        <div class="skills-panel">
+          <div>
+            <p class="eyebrow">TOOLS & METHODS</p>
+            <h3>技能与方法</h3>
+          </div>
+          <div class="skill-cloud">
+            <span>Stata</span><span>Python</span><span>Matlab</span><span>数据清洗</span>
+            <span>网络爬虫</span><span>DEA</span><span>DID</span><span>DDML</span>
+            <span>Office</span><span>Photoshop</span><span>Illustrator</span>
+            <span>Premiere</span><span>After Effects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="awards">
+      <div class="container reveal">
+        <div class="section-heading">
+          <p class="eyebrow">AWARDS</p>
+          <h2>竞赛与荣誉</h2>
+        </div>
+
+        <div class="award-list">
+          <article><span>2025</span><div><h3>全国大学生统计建模大赛（江苏赛区）</h3><p>三等奖 · 负责人</p></div></article>
+          <article><span>2024</span><div><h3>江苏省研究生“开放经济与产业发展”科研创新实践大赛</h3><p>三等奖 · 第一作者</p></div></article>
+          <article><span>2023</span><div><h3>认证杯数学中国数学建模挑战赛</h3><p>一等奖 · 负责人</p></div></article>
+          <article><span>2023</span><div><h3>华数杯国际大学生数学建模竞赛</h3><p>一等奖 · 负责人</p></div></article>
+          <article><span>2023</span><div><h3>亚太地区数学建模竞赛</h3><p>二等奖 · 负责人</p></div></article>
+          <article><span>2022</span><div><h3>高教社杯全国大学生数学建模竞赛（江苏赛区）</h3><p>三等奖</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-card reveal">
+        <div>
+          <p class="eyebrow">CONTACT</p>
+          <h2>保持联系</h2>
+          <p>欢迎围绕研究合作、数据分析、项目交流或其他有趣的问题联系我。</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:241321020003@hhu.edu.cn">241321020003@hhu.edu.cn</a>
+          <a class="btn ghost" href="https://github.com/YueWuHHU" target="_blank" rel="noreferrer">github.com/YueWuHHU</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Yue Wu. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
