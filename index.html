@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <div class="experience-gate" id="experienceGate" aria-hidden="false">
+    <div class="gate-orb gate-orb-one"></div>
+    <div class="gate-orb gate-orb-two"></div>
+
+    <div class="gate-card">
+      <p class="gate-kicker">YUE WU · PERSONAL HOMEPAGE</p>
+      <h1>选择你的浏览方式</h1>
+      <p class="gate-subtitle">
+        Choose the experience that fits your screen. You can switch again later.
+      </p>
+
+      <div class="gate-options">
+        <button class="gate-option" type="button" data-mode="desktop">
+          <span class="device-icon desktop-icon" aria-hidden="true">
+            <span class="desktop-screen"></span>
+            <span class="desktop-stand"></span>
+          </span>
+          <strong>Web</strong>
+          <small>Desktop Experience</small>
+        </button>
+
+        <button class="gate-option" type="button" data-mode="mobile">
+          <span class="device-icon mobile-icon" aria-hidden="true"></span>
+          <strong>Mobile</strong>
+          <small>Compact Experience</small>
+        </button>
+      </div>
+
+      <button class="gate-auto" type="button" id="autoModeBtn">
+        自动识别设备并进入
+      </button>
+    </div>
+  </div>
+
   <div class="noise"></div>
 
   <header class="site-header">
@@ -29,6 +64,7 @@
         <a href="#experience">经历</a>
         <a href="#awards">荣誉</a>
         <a href="#contact">联系</a>
+        <button class="mode-switch-btn" id="modeSwitchBtn" type="button" aria-label="切换浏览模式">View</button>
         <button class="theme-btn" id="themeBtn" aria-label="切换深浅色模式">◐</button>
       </nav>
     </div>

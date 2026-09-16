@@ -1,6 +1,15 @@
-# Yue Wu Personal Homepage
+# Yue Wu Personal Homepage V2
 
-这是一个可直接部署到 GitHub Pages 的纯静态个人主页。
+这是可直接上传到 GitHub Pages 的完整版本，新增：
+
+- 首次进入时选择 `Web` / `Mobile`
+- 自动识别设备
+- 用户选择会保存在浏览器中
+- 顶部 `Web / Mobile` 按钮可以随时重新选择
+- 深色 / 浅色模式
+- 手机与桌面响应式布局
+- 滚动进入动画
+- 无框架、无依赖，直接部署即可
 
 ## 文件结构
 
@@ -13,24 +22,31 @@
     └── avatar.jpg
 ```
 
-## 上传到 GitHub Pages
+## GitHub Pages 部署
 
-1. 打开你的 `YueWuHHU.github.io` 仓库。
-2. 上传本目录中的 `index.html`、`style.css`、`script.js` 和 `assets` 文件夹。
-3. 确认文件位于仓库根目录。
-4. 打开 `Settings → Pages`。
-5. `Source` 选择 `Deploy from a branch`。
-6. Branch 选择 `main`，目录选择 `/(root)`，保存。
-7. 稍等片刻后访问 `https://YueWuHHU.github.io/`。
+把整个压缩包解压后，将里面的所有文件上传到：
 
-## 建议你上线前检查
+`YueWuHHU.github.io`
 
-- 论文、奖项、经历是否需要继续补充或删减；
-- 是否希望公开学校邮箱；
-- 替换 `assets/avatar.jpg` 为更高清的个人照片；
-- 如果有 LinkedIn / Google Scholar / ORCID，可在 `index.html` 的个人链接区增加。
+仓库根目录。
 
-## 修改内容
+然后：
 
-网页文字都在 `index.html` 里，配色和布局在 `style.css` 里。
-不需要安装任何框架或依赖。
+1. `Settings`
+2. `Pages`
+3. `Source` → `Deploy from a branch`
+4. Branch → `main`
+5. Folder → `/(root)`
+6. `Save`
+
+访问：
+
+`https://YueWuHHU.github.io/`
+
+## 测试首次选择页面
+
+选择结果会保存在浏览器的 Local Storage 中。
+
+如果想重新看到首次选择界面：
+- 直接点击网页顶部的 `Web` 或 `Mobile` 按钮即可重新选择；
+- 或清除该网站的浏览器存储数据。
