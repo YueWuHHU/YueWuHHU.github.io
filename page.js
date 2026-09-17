@@ -1,29 +1,31 @@
 
 (function(){
-  const qs = new URLSearchParams(location.search);
-  const mode = qs.get("device") || localStorage.getItem("deviceMode") || (matchMedia("(max-width:760px)").matches ? "mobile":"desktop");
-  document.documentElement.dataset.device = mode;
-  localStorage.setItem("deviceMode", mode);
+  const params = new URLSearchParams(window.location.search);
+  const queryMode = params.get('device');
+  const saved = localStorage.getItem('deviceMode');
+  const detected = window.matchMedia('(max-width:760px)').matches ? 'mobile' : 'desktop';
+  const mode = (queryMode === 'mobile' || queryMode === 'desktop') ? queryMode : (saved || detected);
 
-  if(mode === "mobile"){
-    const style = document.createElement("style");
-    style.textContent = "@media(min-width:761px){.resume{max-width:520px}.toolbar-inner{max-width:520px}.edu,.three,.comp,.honor,.two{grid-template-columns:1fr}.td{border-right:0;border-bottom:1px solid #aaa}.tr .td:last-child{border-bottom:0}.center,.date{text-align:left}}";
-    document.head.appendChild(style);
-  }
+  document.documentElement.setAttribute('data-device', mode);
+  localStorage.setItem('deviceMode', mode);
 
-  const other = document.getElementById("otherVersion");
-  if(other){
-    const u = new URL(other.getAttribute("href"), location.href);
-    u.searchParams.set("device", mode);
-    other.href = u.href;
-  }
+  const modeLabel = document.getElementById('modeLabel');
+  if(modeLabel){ modeLabel.textContent = mode === 'mobile' ? 'Mobile / 移动版' : 'Web / 桌面版'; }
 
-  const btn = document.getElementById("switchDevice");
-  btn && btn.addEventListener("click", function(){
-    const next = mode === "mobile" ? "desktop" : "mobile";
-    localStorage.setItem("deviceMode", next);
-    const u = new URL(location.href);
-    u.searchParams.set("device", next);
-    location.href = u.href;
+  document.querySelectorAll('.switch-version').forEach(a => {
+    const href = new URL(a.getAttribute('href'), location.href);
+    href.searchParams.set('device', mode);
+    a.href = href.pathname + href.search;
   });
+
+  const switchBtn = document.getElementById('switchDeviceBtn');
+  if(switchBtn){
+    switchBtn.addEventListener('click', function(){
+      const next = mode === 'mobile' ? 'desktop' : 'mobile';
+      localStorage.setItem('deviceMode', next);
+      const url = new URL(location.href);
+      url.searchParams.set('device', next);
+      location.href = url.pathname + url.search;
+    });
+  }
 })();

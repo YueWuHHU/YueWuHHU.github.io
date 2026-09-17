@@ -1,12 +1,26 @@
 
-let device = null;
-const s1=document.getElementById('s1'), s2=document.getElementById('s2');
-document.querySelectorAll('[data-device]').forEach(b=>b.onclick=()=>{
-  device=b.dataset.device; localStorage.setItem('deviceMode',device);
-  s1.classList.remove('active'); s2.classList.add('active');
+let chosenDevice = null;
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+
+document.querySelectorAll('[data-device]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    chosenDevice = btn.dataset.device;
+    localStorage.setItem('deviceMode', chosenDevice);
+    step1.classList.remove('active');
+    step2.classList.add('active');
+  });
 });
-document.querySelectorAll('[data-version]').forEach(b=>b.onclick=()=>{
-  const target=b.dataset.version==='job'?'job.html':'academic.html';
-  location.href=target+'?device='+(device||'desktop');
+
+document.querySelectorAll('[data-version]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.version === 'job' ? 'job.html' : 'academic.html';
+    const mode = chosenDevice || localStorage.getItem('deviceMode') || 'desktop';
+    window.location.href = target + '?device=' + encodeURIComponent(mode);
+  });
 });
-document.getElementById('back').onclick=()=>{s2.classList.remove('active');s1.classList.add('active')};
+
+document.getElementById('backBtn').addEventListener('click', () => {
+  step2.classList.remove('active');
+  step1.classList.add('active');
+});

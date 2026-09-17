@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -8,32 +7,37 @@
 <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-<main class="box">
-  <div class="head">
-    <div><h1>吴越 · Yue Wu</h1><p>个人主页</p></div>
+<main class="card">
+  <div class="top">
+    <div>
+      <h1>吴越 <span style="display:block;font-size:18px;color:#697382;font-weight:500;margin-top:6px;">Yue Wu</span></h1>
+      <p>请选择浏览方式与主页版本</p>
+    </div>
     <img src="avatar.jpg" alt="吴越">
   </div>
 
-  <section class="step active" id="s1">
-    <small>STEP 1 / 2</small>
-    <h2>请选择浏览方式</h2>
-    <div class="opts">
-      <button class="opt" data-device="desktop"><b>Web / 桌面版</b><span>适合电脑、大屏查看</span></button>
-      <button class="opt" data-device="mobile"><b>Mobile / 移动版</b><span>适合手机、窄屏查看</span></button>
+  <section class="step active" id="step1">
+    <div class="kicker">STEP 1 / 2</div>
+    <h2>选择浏览方式</h2>
+    <p class="desc">你可以先决定使用桌面版还是移动版浏览。</p>
+    <div class="options">
+      <button class="opt" data-device="desktop"><strong>Web / 桌面版</strong><span>适合电脑与大屏查看，页面宽度更大。</span></button>
+      <button class="opt" data-device="mobile"><strong>Mobile / 移动版</strong><span>适合手机与窄屏查看，页面单栏展开。</span></button>
     </div>
   </section>
 
-  <section class="step" id="s2">
-    <small>STEP 2 / 2</small>
-    <h2>请选择主页版本</h2>
-    <div class="opts">
-      <button class="opt" data-version="job"><b>求职版</b><span>实习、项目、竞赛优先</span></button>
-      <button class="opt" data-version="academic"><b>学术版</b><span>论文、工作论文、研究项目优先</span></button>
+  <section class="step" id="step2">
+    <div class="kicker">STEP 2 / 2</div>
+    <h2>选择主页版本</h2>
+    <p class="desc">两版内容一致，只是展示顺序不同。</p>
+    <div class="options">
+      <button class="opt" data-version="job"><strong>求职版</strong><span>优先展示实习、项目、竞赛与技能。</span></button>
+      <button class="opt" data-version="academic"><strong>学术版</strong><span>优先展示论文、工作论文、项目与学术会议。</span></button>
     </div>
-    <button class="back" id="back">← 返回上一步</button>
+    <button class="back" id="backBtn">← 返回上一步</button>
   </section>
 
-  <div class="note">两版内容一致，仅排序不同；正文排版尽量参考原Word简历。</div>
+  <div class="tip">正文页面中的实习、项目、论文、竞赛等详细说明均支持“折叠 / 展开”。</div>
 </main>
 <script src="landing.js"></script>
 </body>
