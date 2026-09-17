@@ -642,3 +642,85 @@ body.mode-mobile .time{text-align:left}
     max-height:76vh;
   }
 }
+
+
+/* ===== 更紧凑的海报缩略图 ===== */
+.poster-gallery{
+  grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:12px;
+  max-width:980px;
+  margin:10px auto 0;
+}
+
+.poster-card{
+  max-width:150px;
+  width:100%;
+  justify-self:center;
+}
+
+.poster-thumb{
+  aspect-ratio:3 / 4;
+  border-radius:8px;
+}
+
+.poster-meta{
+  margin-top:5px;
+  font-size:11px;
+  gap:6px;
+}
+
+.poster-meta a{
+  font-size:10px;
+}
+
+.poster-zoom{
+  width:24px;
+  height:24px;
+  right:6px;
+  bottom:6px;
+  font-size:13px;
+}
+
+@media(max-width:1050px){
+  .poster-gallery{
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    max-width:820px;
+  }
+}
+
+@media(max-width:820px){
+  .poster-gallery{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    max-width:650px;
+  }
+}
+
+@media(max-width:640px){
+  .poster-gallery{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:9px;
+    max-width:100%;
+  }
+
+  .poster-card{
+    max-width:120px;
+  }
+
+  .poster-meta{
+    font-size:10px;
+  }
+
+  .poster-meta a{
+    font-size:9px;
+  }
+}
+
+@media(max-width:390px){
+  .poster-gallery{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .poster-card{
+    max-width:135px;
+  }
+}
