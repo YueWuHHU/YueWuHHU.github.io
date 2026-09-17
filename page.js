@@ -1,31 +1,39 @@
 
-(function(){
+(() => {
   const params = new URLSearchParams(window.location.search);
-  const queryMode = params.get('device');
-  const saved = localStorage.getItem('deviceMode');
-  const detected = window.matchMedia('(max-width:760px)').matches ? 'mobile' : 'desktop';
-  const mode = (queryMode === 'mobile' || queryMode === 'desktop') ? queryMode : (saved || detected);
+  const requested = params.get("device");
+  const saved = localStorage.getItem("deviceMode");
+  const detected = window.matchMedia("(max-width: 760px)").matches ? "mobile" : "desktop";
 
-  document.documentElement.setAttribute('data-device', mode);
-  localStorage.setItem('deviceMode', mode);
+  const mode =
+    requested === "mobile" || requested === "desktop"
+      ? requested
+      : saved === "mobile" || saved === "desktop"
+        ? saved
+        : detected;
 
-  const modeLabel = document.getElementById('modeLabel');
-  if(modeLabel){ modeLabel.textContent = mode === 'mobile' ? 'Mobile / 移动版' : 'Web / 桌面版'; }
+  document.documentElement.dataset.device = mode;
+  localStorage.setItem("deviceMode", mode);
 
-  document.querySelectorAll('.switch-version').forEach(a => {
-    const href = new URL(a.getAttribute('href'), location.href);
-    href.searchParams.set('device', mode);
-    a.href = href.pathname + href.search;
+  const modeLabel = document.getElementById("modeLabel");
+  if (modeLabel) {
+    modeLabel.textContent = mode === "mobile" ? "Mobile / 移动版" : "Web / 桌面版";
+  }
+
+  // Always keep navigation relative to the current folder.
+  document.querySelectorAll("[data-version-target]").forEach((link) => {
+    const file = link.dataset.versionTarget;
+    link.href = `./${file}?device=${encodeURIComponent(mode)}`;
   });
 
-  const switchBtn = document.getElementById('switchDeviceBtn');
-  if(switchBtn){
-    switchBtn.addEventListener('click', function(){
-      const next = mode === 'mobile' ? 'desktop' : 'mobile';
-      localStorage.setItem('deviceMode', next);
-      const url = new URL(location.href);
-      url.searchParams.set('device', next);
-      location.href = url.pathname + url.search;
+  const switchBtn = document.getElementById("switchDeviceBtn");
+  if (switchBtn) {
+    switchBtn.addEventListener("click", () => {
+      const next = mode === "mobile" ? "desktop" : "mobile";
+      localStorage.setItem("deviceMode", next);
+
+      const currentFile = window.location.pathname.split("/").pop() || "index.html";
+      window.location.assign(`./${currentFile}?device=${encodeURIComponent(next)}`);
     });
   }
 })();
