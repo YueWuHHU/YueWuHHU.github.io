@@ -1,59 +1,40 @@
+
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>吴越 | Yue Wu</title>
-  <link rel="stylesheet" href="landing.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>吴越 | Yue Wu</title>
+<link rel="stylesheet" href="landing.css">
 </head>
 <body>
-  <main class="start-card">
-    <div class="brand">
-      <div>
-        <h1>吴越 <span>Yue Wu · Personal Homepage</span></h1>
-      </div>
-      <img src="avatar.jpg" alt="吴越个人照片">
+<main class="box">
+  <div class="head">
+    <div><h1>吴越 · Yue Wu</h1><p>个人主页</p></div>
+    <img src="avatar.jpg" alt="吴越">
+  </div>
+
+  <section class="step active" id="s1">
+    <small>STEP 1 / 2</small>
+    <h2>请选择浏览方式</h2>
+    <div class="opts">
+      <button class="opt" data-device="desktop"><b>Web / 桌面版</b><span>适合电脑、大屏查看</span></button>
+      <button class="opt" data-device="mobile"><b>Mobile / 移动版</b><span>适合手机、窄屏查看</span></button>
     </div>
+  </section>
 
-    <section class="step active" id="stepDevice">
-      <div class="kicker">STEP 1 / 2</div>
-      <h2>请选择浏览方式</h2>
-      <p class="desc">先选择更适合当前设备的页面布局。</p>
+  <section class="step" id="s2">
+    <small>STEP 2 / 2</small>
+    <h2>请选择主页版本</h2>
+    <div class="opts">
+      <button class="opt" data-version="job"><b>求职版</b><span>实习、项目、竞赛优先</span></button>
+      <button class="opt" data-version="academic"><b>学术版</b><span>论文、工作论文、研究项目优先</span></button>
+    </div>
+    <button class="back" id="back">← 返回上一步</button>
+  </section>
 
-      <div class="options">
-        <button class="option" data-device="desktop">
-          <strong>Web / 桌面版</strong>
-          <span>适合电脑与大屏浏览，内容横向展开，信息密度更高。</span>
-        </button>
-        <button class="option" data-device="mobile">
-          <strong>Mobile / 移动版</strong>
-          <span>适合手机与窄屏浏览，内容改为单栏排列。</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="step" id="stepVersion">
-      <div class="kicker">STEP 2 / 2</div>
-      <h2>请选择主页版本</h2>
-      <p class="desc">两版内容基本一致，只是展示顺序不同。</p>
-
-      <div class="options">
-        <button class="option" data-version="job">
-          <strong>求职版</strong>
-          <span>优先展示实习、项目、竞赛、技能和校园经历，学术成果放在后半部分。</span>
-        </button>
-        <button class="option" data-version="academic">
-          <strong>学术版</strong>
-          <span>优先展示论文、工作论文、研究项目、会议与研修经历。</span>
-        </button>
-      </div>
-
-      <button class="back" id="backBtn">← 返回上一步</button>
-    </section>
-
-    <div class="summary" id="summary">尚未选择浏览方式。</div>
-  </main>
-
-  <script src="landing.js"></script>
+  <div class="note">两版内容一致，仅排序不同；正文排版尽量参考原Word简历。</div>
+</main>
+<script src="landing.js"></script>
 </body>
 </html>

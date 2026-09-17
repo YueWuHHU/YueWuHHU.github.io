@@ -1,23 +1,29 @@
-(function(){
-  const params = new URLSearchParams(window.location.search);
-  const queryDevice = params.get("device");
-  const saved = localStorage.getItem("deviceMode");
-  const detected = window.matchMedia("(max-width: 760px)").matches ? "mobile" : "desktop";
-  const mode = (queryDevice === "mobile" || queryDevice === "desktop") ? queryDevice : (saved || detected);
 
-  document.documentElement.setAttribute("data-device", mode);
+(function(){
+  const qs = new URLSearchParams(location.search);
+  const mode = qs.get("device") || localStorage.getItem("deviceMode") || (matchMedia("(max-width:760px)").matches ? "mobile":"desktop");
+  document.documentElement.dataset.device = mode;
   localStorage.setItem("deviceMode", mode);
 
-  const label = document.getElementById("currentMode");
-  if (label) label.textContent = mode === "mobile" ? "Mobile / 移动版" : "Web / 桌面版";
+  if(mode === "mobile"){
+    const style = document.createElement("style");
+    style.textContent = "@media(min-width:761px){.resume{max-width:520px}.toolbar-inner{max-width:520px}.edu,.three,.comp,.honor,.two{grid-template-columns:1fr}.td{border-right:0;border-bottom:1px solid #aaa}.tr .td:last-child{border-bottom:0}.center,.date{text-align:left}}";
+    document.head.appendChild(style);
+  }
 
-  document.querySelectorAll("[data-switch-device]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const next = mode === "mobile" ? "desktop" : "mobile";
-      localStorage.setItem("deviceMode", next);
-      const url = new URL(window.location.href);
-      url.searchParams.set("device", next);
-      window.location.href = url.toString();
-    });
+  const other = document.getElementById("otherVersion");
+  if(other){
+    const u = new URL(other.getAttribute("href"), location.href);
+    u.searchParams.set("device", mode);
+    other.href = u.href;
+  }
+
+  const btn = document.getElementById("switchDevice");
+  btn && btn.addEventListener("click", function(){
+    const next = mode === "mobile" ? "desktop" : "mobile";
+    localStorage.setItem("deviceMode", next);
+    const u = new URL(location.href);
+    u.searchParams.set("device", next);
+    location.href = u.href;
   });
 })();
