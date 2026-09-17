@@ -3,20 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>手机版 | 吴越</title>
-<link rel="stylesheet" href="landing.css">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<title>Private Homepage</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="secure.css">
 </head>
 <body>
-<main class="card">
-  <div class="head">
-    <h1>手机版</h1>
-    <img src="avatar.jpg" alt="吴越">
+<div id="secureRoot" hidden></div>
+
+<div id="secureGate" class="secure-gate">
+  <div class="secure-card">
+    <div class="secure-mark">YW</div>
+    <h1>Private Homepage</h1>
+    <p>完整主页已加密，请输入访问密码。</p>
+    <form id="secureForm">
+      <input id="securePassword" type="password" autocomplete="current-password" placeholder="访问密码" aria-label="访问密码" autofocus>
+      <button type="submit">进入主页</button>
+    </form>
+    <div id="secureError" class="secure-error" aria-live="polite"></div>
+    <div class="secure-note">密码不会写入网页文件；验证信息仅保留在当前标签页。</div>
   </div>
-  <div class="options">
-    <a class="option" href="./job-mobile.html">求职版</a>
-    <a class="option" href="./academic-mobile.html">学术版</a>
-  </div>
-  <a class="back" href="./index.html">← 返回</a>
-</main>
+</div>
+
+<script src="gallery.js"></script>
+<script src="secure.js"></script>
 </body>
 </html>
