@@ -1,52 +1,47 @@
-# Yue Wu Personal Homepage V2
+# 吴越个人主页｜合并版
 
-这是可直接上传到 GitHub Pages 的完整版本，新增：
+这个压缩包把“设备选择”和“主页版本选择”整合在同一个网站中。
 
-- 首次进入时选择 `Web` / `Mobile`
-- 自动识别设备
-- 用户选择会保存在浏览器中
-- 顶部 `Web / Mobile` 按钮可以随时重新选择
-- 深色 / 浅色模式
-- 手机与桌面响应式布局
-- 滚动进入动画
-- 无框架、无依赖，直接部署即可
+## 访问流程
+
+打开首页：
+
+1. 先选择 `Web / 桌面版` 或 `Mobile / 移动版`
+2. 再选择 `求职版` 或 `学术版`
+3. 进入对应主页
+
+进入主页后还可以：
+- 切换 Web / Mobile
+- 在求职版和学术版之间切换
+- 返回选择首页
 
 ## 文件结构
 
-```text
-.
-├── index.html
-├── style.css
-├── script.js
-└── assets/
-    └── avatar.jpg
-```
+所有文件都在同一级目录，不需要创建文件夹：
 
-## GitHub Pages 部署
+- index.html        首页选择页
+- landing.css       首页样式
+- landing.js        首页选择逻辑
+- job.html          求职版主页
+- academic.html     学术版主页
+- style.css         两个主页共用样式
+- page.js           两个主页共用设备模式逻辑
+- avatar.jpg        头像
+- README.md
 
-把整个压缩包解压后，将里面的所有文件上传到：
+## GitHub Pages 上传
 
-`YueWuHHU.github.io`
+把以上所有文件一次性上传到 `YueWuHHU.github.io` 仓库根目录，然后：
 
-仓库根目录。
+Settings → Pages → Deploy from a branch → main → /(root) → Save
 
-然后：
+最终访问：
+https://YueWuHHU.github.io/
 
-1. `Settings`
-2. `Pages`
-3. `Source` → `Deploy from a branch`
-4. Branch → `main`
-5. Folder → `/(root)`
-6. `Save`
+## 两个版本的区别
 
-访问：
+求职版：
+教育 → 实习 → 项目 → 竞赛 → 技能 → 校园经历 → 荣誉 → 学术论文 → 工作论文 → 学术会议 → 研修营
 
-`https://YueWuHHU.github.io/`
-
-## 测试首次选择页面
-
-选择结果会保存在浏览器的 Local Storage 中。
-
-如果想重新看到首次选择界面：
-- 直接点击网页顶部的 `Web` 或 `Mobile` 按钮即可重新选择；
-- 或清除该网站的浏览器存储数据。
+学术版：
+教育 → 学术论文 → 工作论文 → 项目 → 学术会议 → 研修营 → 竞赛 → 实习 → 荣誉 → 校园经历 → 技能
