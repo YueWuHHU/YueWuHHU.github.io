@@ -1,0 +1,60 @@
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+  background:#f3f5f8;
+  color:#20242b;
+  font-family:"Times New Roman","Songti SC","STSong","SimSun",serif;
+}
+.card{
+  width:min(620px,100%);
+  background:#fff;
+  padding:34px;
+  border-radius:16px;
+  box-shadow:0 12px 34px rgba(30,45,60,.07);
+}
+.head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  padding-bottom:18px;
+  margin-bottom:22px;
+  border-bottom:1px solid #cfd6df;
+}
+h1{margin:0;font-size:30px}
+h1 span{display:block;margin-top:5px;font-size:17px;font-weight:400;color:#6d7480}
+.head img{width:70px;height:92px;object-fit:cover;border-radius:7px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.option{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:92px;
+  border:1px solid #d8dee7;
+  border-radius:12px;
+  color:#20242b;
+  text-decoration:none;
+  font-size:19px;
+  font-weight:700;
+  background:#fff;
+}
+.option:hover{
+  border-color:#9aa9ba;
+  background:#f8fafc;
+}
+.back{
+  display:inline-block;
+  margin-top:18px;
+  color:#52606d;
+  font-size:13px;
+  text-decoration:none;
+}
+@media(max-width:560px){
+  .card{padding:24px}
+  .options{grid-template-columns:1fr}
+}
