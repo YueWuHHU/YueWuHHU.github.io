@@ -58,3 +58,14 @@ h1 span{display:block;margin-top:5px;font-size:17px;font-weight:400;color:#6d748
   .card{padding:24px}
   .options{grid-template-columns:1fr}
 }
+
+
+/* 首页使用卡通头像 */
+.head img{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid #e2e7ee;
+  background:#f4f7fb;
+}

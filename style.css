@@ -724,3 +724,27 @@ body.mode-mobile .time{text-align:left}
     max-width:135px;
   }
 }
+
+
+/* 公开主页使用卡通头像，不展示真实证件照 */
+.hero{
+  grid-template-columns:1fr 118px;
+}
+.hero-avatar{
+  width:108px;
+  height:108px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px solid var(--soft-line);
+  background:#f4f7fb;
+}
+@media(max-width:760px){
+  .hero-avatar{
+    width:92px;
+    height:92px;
+  }
+}
+body.mode-mobile .hero-avatar{
+  width:92px;
+  height:92px;
+}
