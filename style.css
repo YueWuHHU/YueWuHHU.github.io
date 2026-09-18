@@ -1099,3 +1099,16 @@ footer{
 #portfolio .pdf-card h4{
   font-size:15px !important;
 }
+
+
+/* ===== 所有三列模块的中间信息统一为 14px ===== */
+#education .row-middle,
+#internships .row-middle,
+#projects .row-middle,
+#meetings .row-middle,
+#summer .row-middle,
+#competitions .row-middle,
+#honors .row-middle,
+#campus .row-middle{
+  font-size:14px !important;
+}
