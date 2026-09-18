@@ -8,85 +8,47 @@
   align-items:center;
   justify-content:center;
   padding:24px;
-  background:#ffffff;
-  color:#000000;
+  background:#fff;
+  color:#000;
   font-family:"Times New Roman","Songti SC","STSong","SimSun",serif;
 }
 .secure-gate[hidden]{display:none}
 .secure-card{
   width:min(420px,100%);
   padding:34px 30px;
-  border:2px solid #0b4da2;
-  background:#ffffff;
+  border:3px solid #0b4fa2;
+  background:#fff;
   text-align:center;
 }
 .secure-mark{
-  width:62px;
-  height:62px;
-  display:grid;
-  place-items:center;
+  width:62px;height:62px;
+  display:grid;place-items:center;
   margin:0 auto 14px;
-  border:2px solid #0b4da2;
+  border:2px solid #0b4fa2;
   border-radius:50%;
-  color:#0b4da2;
+  color:#0b4fa2;
   font-weight:700;
 }
-.secure-card h1{
-  margin:0 0 8px;
-  color:#000;
-  font-size:25px;
-}
-.secure-card p{
-  margin:0 0 20px;
-  color:#0b4da2;
-  font-size:14px;
-}
+.secure-card h1{margin:0 0 8px;color:#000;font-size:25px}
+.secure-card p{margin:0 0 20px;color:#0b4fa2;font-size:14px;font-weight:700}
 #secureForm{display:flex;gap:8px}
 #securePassword{
-  min-width:0;
-  flex:1;
-  height:43px;
+  min-width:0;flex:1;height:43px;
   padding:0 12px;
-  border:1.5px solid #0b4da2;
-  border-radius:0;
+  border:1.5px solid #0b4fa2;
   outline:none;
-  font:inherit;
-  color:#000;
-}
-#securePassword:focus{
-  box-shadow:0 0 0 2px #edf5ff;
+  color:#000;background:#fff;
 }
 #secureForm button{
-  height:43px;
-  padding:0 18px;
-  border:0;
-  background:#0b4da2;
-  color:#fff;
-  cursor:pointer;
-  font:inherit;
-  font-weight:700;
+  height:43px;padding:0 18px;
+  border:0;background:#0b4fa2;color:#fff;
+  cursor:pointer;font-weight:700;
 }
-.secure-error{
-  min-height:20px;
-  margin-top:8px;
-  color:#0b4da2;
-  font-size:12px;
-}
-.secure-note{
-  margin-top:8px;
-  color:#000;
-  font-size:11px;
-}
+.secure-error{min-height:20px;margin-top:8px;color:#0b4fa2;font-size:12px}
+.secure-note{margin-top:8px;color:#000;font-size:11px}
 .secure-logout{
-  position:fixed;
-  right:15px;
-  bottom:15px;
-  z-index:9998;
-  padding:7px 12px;
-  border:1px solid #0b4da2;
-  background:#fff;
-  color:#0b4da2;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:700;
+  position:fixed;right:15px;bottom:15px;z-index:9998;
+  padding:7px 12px;border:1px solid #0b4fa2;
+  background:#fff;color:#0b4fa2;cursor:pointer;
+  font-size:12px;font-weight:700;
 }
