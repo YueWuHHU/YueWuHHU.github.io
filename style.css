@@ -1083,3 +1083,19 @@ footer{
   background:var(--blue);
   color:#fff;
 }
+
+
+/* ===== 全部模块的项目名称统一为 15px ===== */
+#education .row-left,
+#internships .row-left,
+#projects .row-left,
+#meetings .row-left,
+#summer .row-left,
+#competitions .row-left,
+#honors .row-left,
+#campus .row-left,
+.publication-citation,
+.working-title,
+#portfolio .pdf-card h4{
+  font-size:15px !important;
+}
