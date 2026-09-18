@@ -1032,3 +1032,15 @@ footer{
     font-size:13px;
   }
 }
+
+
+/* ===== 个人评价：不使用加粗、下划线或蓝色强调 ===== */
+#personal .personal-block,
+#personal .personal-block p,
+#personal .personal-block strong,
+#personal .personal-block .word-emph,
+#personal .personal-block .word-underline{
+  color:#000 !important;
+  font-weight:400 !important;
+  text-decoration:none !important;
+}
