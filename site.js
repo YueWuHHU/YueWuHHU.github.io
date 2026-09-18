@@ -172,6 +172,29 @@
     });
   }
 
+
+  function initPublicationDisclosures() {
+    document.querySelectorAll('.publication-toggle').forEach(btn => {
+      if (btn.dataset.bound === '1') return;
+      btn.dataset.bound = '1';
+      btn.addEventListener('click', () => {
+        const actions = btn.closest('.publication-actions');
+        const panel = actions?.querySelector('.publication-panel');
+        if (!panel) return;
+        const opening = panel.hasAttribute('hidden');
+        if (opening) {
+          panel.removeAttribute('hidden');
+          btn.textContent = '收起';
+          btn.setAttribute('aria-expanded', 'true');
+        } else {
+          panel.setAttribute('hidden', '');
+          btn.textContent = '展开';
+          btn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  }
+
   function showMain(payload) {
     const root=document.getElementById("secureRoot");
     document.title=payload.title || "Yue Wu";
@@ -191,6 +214,7 @@
     document.body.appendChild(logout);
 
     initGallery();
+    initPublicationDisclosures();
     initSecondaryGate();
   }
 

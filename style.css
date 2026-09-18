@@ -883,3 +883,70 @@ footer{
     white-space:normal;
   }
 }
+
+
+/* ===== 发表论文展开区：操作按钮固定一行，详情独立占下一行 ===== */
+.publication-actions{
+  display:block !important;
+  margin-top:8px;
+}
+.publication-action-row{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  min-height:24px;
+}
+.publication-toggle,
+.publication-action-row .text-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:flex-start;
+  height:24px;
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+  line-height:24px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.publication-action-row .text-link.disabled{
+  color:var(--blue-dark);
+  text-decoration:none;
+  cursor:default;
+}
+.publication-panel{
+  width:100%;
+  margin-top:10px;
+  padding:10px 14px 9px 15px;
+  border-left:3px solid var(--blue);
+  border-top:1px solid var(--blue);
+  color:#000;
+  font-size:14px;
+  line-height:1.78;
+}
+.publication-panel[hidden]{display:none !important;}
+.publication-panel .detail-label{
+  margin:0 0 5px;
+  font-weight:700;
+}
+.publication-panel .detail-list{
+  margin:0;
+  padding:0;
+}
+.publication-panel .detail-list li{
+  margin:5px 0;
+}
+@media(max-width:700px){
+  .publication-action-row{gap:18px;}
+  .publication-panel{
+    margin-top:8px;
+    padding:8px 10px 8px 12px;
+    font-size:13px;
+  }
+}
