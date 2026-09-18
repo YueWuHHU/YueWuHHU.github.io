@@ -3,19 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>吴越 | Yue Wu</title>
-<link rel="stylesheet" href="landing.css">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
+<title>Private Homepage</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="secure.css">
 </head>
 <body>
-<main class="card">
-  <div class="head">
-    <h1>吴越<span>Yue Wu</span></h1>
-    <img src="avatar.jpg" alt="吴越">
+<div id="secureRoot" hidden></div>
+<div id="secureGate" class="secure-gate">
+  <div class="secure-card">
+    <div class="secure-mark">YW</div>
+    <h1>Private Homepage</h1>
+    <p>输入访问密码后进入完整主页</p>
+    <form id="secureForm">
+      <input id="securePassword" type="password" autocomplete="current-password" placeholder="访问密码" aria-label="访问密码" autofocus>
+      <button type="submit">进入</button>
+    </form>
+    <div id="secureError" class="secure-error" aria-live="polite"></div>
+    <div class="secure-note">完整简历内容以加密形式保存。</div>
   </div>
-  <div class="options">
-    <a class="option" href="./web.html">网页版</a>
-    <a class="option" href="./mobile.html">手机版</a>
-  </div>
-</main>
+</div>
+<script src="secure.js"></script>
 </body>
 </html>
