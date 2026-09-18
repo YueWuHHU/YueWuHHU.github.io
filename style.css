@@ -651,3 +651,69 @@ footer{
 @media(max-width:390px){
   .secondary-form{flex-direction:column}
 }
+
+
+/* ===== 论文操作栏精确水平对齐 ===== */
+.publication-actions{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  margin-top:8px;
+  line-height:1;
+}
+.publication-actions .detail{
+  margin:0;
+  padding:0;
+  display:inline-flex;
+  align-items:center;
+}
+.publication-actions .detail summary,
+.publication-actions .text-link{
+  display:inline-flex;
+  align-items:center;
+  height:24px;
+  margin:0;
+  padding:0;
+  line-height:24px;
+  font-size:12px;
+  font-weight:700;
+  vertical-align:middle;
+}
+.publication-actions .detail summary::before{
+  line-height:24px;
+}
+
+
+/* ===== 桌面端三列重新分配：左侧标题保持单行 ===== */
+@media(min-width:701px){
+  .row-main{
+    grid-template-columns:minmax(0,1fr) 150px 96px;
+    gap:18px;
+  }
+
+  .row-left{
+    white-space:nowrap;
+    overflow:visible;
+    font-size:14px;
+    line-height:1.55;
+  }
+
+  .row-middle{
+    white-space:nowrap;
+    font-size:13.5px;
+  }
+
+  .row-main time{
+    white-space:nowrap;
+    font-size:13px;
+  }
+}
+
+/* 学术会议等较长左侧标题仍保持同一行 */
+#meetings .row-left,
+#summer .row-left,
+#competitions .row-left,
+#honors .row-left{
+  white-space:nowrap;
+}
