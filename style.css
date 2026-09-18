@@ -1044,3 +1044,42 @@ footer{
   font-weight:400 !important;
   text-decoration:none !important;
 }
+
+
+/* ===== PDF 预览按需加载：避免进入主页时自动请求/下载全部 PDF ===== */
+.pdf-preview-shell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.pdf-preview-deferred{
+  display:none;
+}
+.pdf-preview-deferred.is-loaded{
+  display:block;
+  width:100%;
+  height:100%;
+}
+.pdf-preview-placeholder{
+  color:var(--blue-dark);
+  font-size:13px;
+  font-weight:700;
+  text-align:center;
+}
+.pdf-preview-load{
+  position:absolute;
+  left:50%;
+  top:56%;
+  transform:translate(-50%,-50%);
+  padding:6px 10px;
+  border:1px solid var(--blue);
+  background:#fff;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+.pdf-preview-load:hover{
+  background:var(--blue);
+  color:#fff;
+}

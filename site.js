@@ -1,6 +1,6 @@
 
 (() => {
-  const PRIMARY_SALT = "NX1TPJGBl046dVgR01eAHA==";
+  const PRIMARY_SALT = "LWvTIHL7O/YwVllCV+E0rg==";
   const PRIMARY_ITERATIONS = 300000;
   const PRIMARY_SESSION = "yuewu_primary_key";
 
@@ -172,6 +172,26 @@
     });
   }
 
+
+  function initDeferredPdfPreviews() {
+    document.querySelectorAll('.pdf-card').forEach(card => {
+      const frame = card.querySelector('.pdf-preview-deferred');
+      const button = card.querySelector('.pdf-preview-load');
+      const placeholder = card.querySelector('.pdf-preview-placeholder');
+      if (!frame || !button || button.dataset.bound === '1') return;
+
+      button.dataset.bound = '1';
+      button.addEventListener('click', () => {
+        if (!frame.src && frame.dataset.src) {
+          frame.src = frame.dataset.src;
+        }
+        frame.classList.add('is-loaded');
+        if (placeholder) placeholder.hidden = true;
+        button.hidden = true;
+      });
+    });
+  }
+
   function showMain(payload) {
     const root=document.getElementById("secureRoot");
     document.title=payload.title || "Yue Wu";
@@ -191,6 +211,7 @@
     document.body.appendChild(logout);
 
     initGallery();
+    initDeferredPdfPreviews();
     initSecondaryGate();
   }
 
