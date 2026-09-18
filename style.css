@@ -950,3 +950,85 @@ footer{
     font-size:13px;
   }
 }
+
+
+/* ===== 学术论文模块最终布局 =====
+   第1行：论文作者/题目 + 年份
+   第2行：期刊/分区/IF + 链接
+   第3行：与其它模块一致的“展开”
+*/
+.publication-meta-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  width:100%;
+}
+.publication-meta-link{
+  flex:0 0 auto;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  white-space:nowrap;
+}
+.publication-meta-link.disabled{
+  color:var(--blue-dark);
+  text-decoration:none;
+}
+.publication-expand-row{
+  display:block;
+  margin-top:7px;
+}
+.publication-expand-row .detail{
+  margin:0;
+}
+.publication-expand-row .detail summary{
+  display:inline-block;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+  cursor:pointer;
+  list-style:none;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.publication-expand-row .detail summary::-webkit-details-marker{
+  display:none;
+}
+.publication-expand-row .detail summary::before{
+  content:"＋ ";
+}
+.publication-expand-row .detail[open] summary::before{
+  content:"－ ";
+}
+.publication-expand-row .detail-panel{
+  width:100%;
+  margin-top:9px;
+  padding:4px 0 4px 14px;
+  border-left:3px solid var(--blue);
+  border-top:0;
+  border-bottom:0;
+  color:#000;
+  font-size:14px;
+  line-height:1.78;
+}
+
+/* 关闭上一版自定义 publication-panel 的显示规则 */
+.publication-panel{
+  display:none !important;
+}
+
+@media(max-width:700px){
+  .publication-meta-row{
+    align-items:flex-start;
+    gap:12px;
+  }
+  .publication-meta-link{
+    margin-top:1px;
+  }
+  .publication-expand-row .detail-panel{
+    font-size:13px;
+  }
+}
