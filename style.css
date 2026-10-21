@@ -1049,4 +1049,49 @@ footer{
 .publication-expand-row .detail summary::-webkit-details-marker{
  display:none;
 }
-.publication-expand-row .detail summary::before{
+/* ===== V2.3 统一字号规范：桌面端 ===== */
+.hero h1{font-size:34px}
+.section h2{font-size:25px}
+.row-left,
+#education .row-left,#meetings .row-left,#summer .row-left,
+#competitions .row-left,#projects .row-left,#honors .row-left,
+#campus .row-left,#internships .row-left,
+.publication-citation,.working-title,.pdf-card h4{font-size:14px}
+.row-middle,#education .row-middle,#meetings .row-middle,
+#summer .row-middle,#competitions .row-middle,#projects .row-middle,
+#honors .row-middle,#campus .row-middle,#internships .row-middle,
+.publication-meta{font-size:14px}
+.row-main time,.publication-line1 time{font-size:13px}
+.detail-panel,.publication-panel,.personal-block{font-size:14px}
+.topbar nav a{font-size:13px}
+.portfolio-block h3{font-size:14px}
+.detail summary,.text-link,.locked-file-btn,
+.publication-actions .detail summary,.publication-actions .text-link,
+.publication-toggle,.publication-action-row .text-link,
+.publication-meta-link,.publication-expand-row .detail summary,
+.secondary-form button,.secondary-close,.secure-logout{font-size:13px}
+.portfolio-note,.poster-card figcaption,.preview-badge{font-size:13px}
+/* 保持姓名、模块层级统一；只在手机端按约定缩小一像素。 */
+@media(max-width:700px){
+ .hero h1{font-size:33px}
+ .section h2{font-size:24px}
+ .row-left,
+ #education .row-left,#meetings .row-left,#summer .row-left,
+ #competitions .row-left,#projects .row-left,#honors .row-left,
+ #campus .row-left,#internships .row-left,
+ .publication-citation,.working-title,.pdf-card h4{font-size:13px}
+ .row-middle,#education .row-middle,#meetings .row-middle,
+ #summer .row-middle,#competitions .row-middle,#projects .row-middle,
+ #honors .row-middle,#campus .row-middle,#internships .row-middle,
+ .publication-meta{font-size:13px}
+ .row-main time,.publication-line1 time{font-size:12px}
+ .detail-panel,.publication-panel,.personal-block{font-size:13px}
+ .topbar nav a{font-size:12px}
+ .portfolio-block h3{font-size:13px}
+ .detail summary,.text-link,.locked-file-btn,
+ .publication-actions .detail summary,.publication-actions .text-link,
+ .publication-toggle,.publication-action-row .text-link,
+ .publication-meta-link,.publication-expand-row .detail summary,
+ .secondary-form button,.secondary-close,.secure-logout{font-size:12px}
+ .portfolio-note,.poster-card figcaption,.preview-badge{font-size:12px}
+}

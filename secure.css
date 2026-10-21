@@ -51,3 +51,7 @@
  background:#fff;color:#0b4fa2;cursor:pointer;
  font-size:12px;font-weight:700;
 }
+
+/* V2.3: 访问弹窗按钮文字与全站交互文字字号统一 */
+#secureForm button{font-size:13px}
+@media(max-width:700px){#secureForm button{font-size:12px}}
