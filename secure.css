@@ -55,3 +55,14 @@
 /* V2.3: 访问弹窗按钮文字与全站交互文字字号统一 */
 #secureForm button{font-size:13px}
 @media(max-width:700px){#secureForm button{font-size:12px}}
+
+/* ===== V2.5：仅电脑版登录界面常规文字 +1px ===== */
+@media (min-width:701px){
+ .secure-gate{font-size:17px}
+ .secure-card h1{font-size:26px}
+ .secure-card p{font-size:15px}
+ .secure-error{font-size:13px}
+ .secure-note{font-size:12px}
+ #secureForm button{font-size:14px}
+ .secure-logout{font-size:14px}
+}

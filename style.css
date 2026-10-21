@@ -1104,3 +1104,70 @@ footer{
  .secondary-form button,.secondary-close,.secure-logout{font-size:12px}
  .portfolio-note,.poster-card figcaption,.preview-badge{font-size:12px}
 }
+
+/* ===== V2.5：电脑版文字整体 +1px（最大姓名及12个模块标题保持不变） ===== */
+@media (min-width:701px){
+ body{font-size:17px}
+ .brand-mark{font-size:13px}
+ .brand-name{font-size:16px}
+ .topbar nav a{font-size:14px}
+ .eyebrow{font-size:12px}
+ .hero h1 span{font-size:21px}
+ .hero p{font-size:16px}
+ .hero-meta{font-size:13px}
+ /* 以下两个大标题是保留项，不调整：.hero h1 (34px)、.section h2 (25px) */
+ .row-left,#education .row-left,#meetings .row-left,#summer .row-left,
+ #competitions .row-left,#projects .row-left,#honors .row-left,
+ #campus .row-left,#internships .row-left,
+ .publication-citation,.working-title,.pdf-card h4{font-size:15px}
+ .row-middle,#education .row-middle,#meetings .row-middle,
+ #summer .row-middle,#competitions .row-middle,#projects .row-middle,
+ #honors .row-middle,#campus .row-middle,#internships .row-middle,
+ .publication-meta{font-size:15px}
+ .row-main time,.publication-line1 time{font-size:14px}
+ .detail-panel,.publication-panel,.personal-block{font-size:15px}
+ .portfolio-block h3{font-size:15px}
+ .detail summary,.text-link,.locked-file-btn,
+ .publication-actions .detail summary,.publication-actions .text-link,
+ .publication-toggle,.publication-action-row .text-link,
+ .publication-meta-link,.publication-expand-row .detail summary,
+ .secondary-form button,.secondary-close,.secure-logout{font-size:14px}
+ .portfolio-note,.poster-card figcaption,.preview-badge{font-size:14px}
+ footer{font-size:12px}
+ .lightbox-close{font-size:26px}
+ .lightbox-nav{font-size:32px}
+ .secondary-card h3{font-size:22px}
+ .secondary-card p{font-size:14px}
+ .secondary-error{font-size:12px}
+}
+
+/* ===== V2.5：仅电脑版教育经历为 5 栏，专业左对齐，其他四栏居中 ===== */
+@media (min-width:701px){
+ #education .row-main{
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1.45fr) minmax(0,1.42fr) minmax(0,1.5fr) minmax(0,1.05fr);
+  gap:clamp(8px,1.2vw,18px);
+  align-items:center;
+ }
+ #education .row-left{
+  text-align:center;
+  white-space:normal;
+  overflow-wrap:anywhere;
+ }
+ #education .row-middle{display:contents}
+ #education .edu-school,#education .edu-college,#education .edu-major{
+  min-width:0;
+  white-space:normal;
+  overflow-wrap:break-word;
+  color:var(--blue-dark);
+  font-size:15px;
+  font-weight:700;
+ }
+ #education .edu-school,#education .edu-college{text-align:center}
+ #education .edu-major{text-align:left}
+ #education .edu-sep{display:none}
+ #education .row-main time{text-align:center;white-space:nowrap}
+}
+/* 在平板宽度上允许日期自然换行，避免窄屏横向溢出。 */
+@media (min-width:701px) and (max-width:860px){
+ #education .row-main time{white-space:normal;overflow-wrap:anywhere}
+}
