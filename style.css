@@ -1171,3 +1171,30 @@ footer{
 @media (min-width:701px) and (max-width:860px){
  #education .row-main time{white-space:normal;overflow-wrap:anywhere}
 }
+
+
+/* ===== V2.8 文字配色：普通信息黑色；链接/下划线/特意强调保留蓝色 =====
+   仅更新 color，不修改字号、字重、间距及响应式布局。
+   `.word-emph` / `.word-underline` / 可交互链接沿用原有蓝色。
+*/
+.hero h1 span,
+.hero-meta,
+.row-middle,
+.row-main time,
+.publication-line1 time,
+.publication-meta,
+.portfolio-note,
+.poster-card figcaption,
+footer,
+.text-link.disabled,
+.publication-action-row .text-link.disabled,
+.publication-meta-link.disabled {
+ color:var(--black);
+}
+/* 电脑版教育经历五栏具有更高权重的单独配色，须显式覆盖。 */
+#education .edu-school,
+#education .edu-college,
+#education .edu-major { color:var(--black); }
+/* 交互文字与 Word 中特殊的加粗、下划线内容仍使用原来的强调蓝。 */
+.word-emph,
+.word-underline { color:var(--blue); }

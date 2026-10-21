@@ -29,7 +29,7 @@
  font-weight:700;
 }
 .secure-card h1{margin:0 0 8px;color:#000;font-size:25px}
-.secure-card p{margin:0 0 20px;color:#0b4fa2;font-size:14px;font-weight:700}
+.secure-card p{margin:0 0 20px;color:#000;font-size:14px;font-weight:700}
 #secureForm{display:flex;gap:8px}
 #securePassword{
  min-width:0;flex:1;height:43px;
