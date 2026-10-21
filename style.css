@@ -1141,7 +1141,7 @@ footer{
  .secondary-error{font-size:12px}
 }
 
-/* ===== V2.5：仅电脑版教育经历为 5 栏，专业左对齐，其他四栏居中 ===== */
+/* ===== V2.5：电脑端教育经历五栏，学位及专业左对齐，学校及学院居中，日期右对齐 ===== */
 @media (min-width:701px){
  #education .row-main{
   grid-template-columns: minmax(0,1.1fr) minmax(0,1.45fr) minmax(0,1.42fr) minmax(0,1.5fr) minmax(0,1.05fr);
@@ -1149,7 +1149,7 @@ footer{
   align-items:center;
  }
  #education .row-left{
-  text-align:center;
+  text-align:left;
   white-space:normal;
   overflow-wrap:anywhere;
  }
@@ -1165,7 +1165,7 @@ footer{
  #education .edu-school,#education .edu-college{text-align:center}
  #education .edu-major{text-align:left}
  #education .edu-sep{display:none}
- #education .row-main time{text-align:center;white-space:nowrap}
+ #education .row-main time{text-align:right;white-space:nowrap}
 }
 /* 在平板宽度上允许日期自然换行，避免窄屏横向溢出。 */
 @media (min-width:701px) and (max-width:860px){
