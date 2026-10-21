@@ -1198,3 +1198,104 @@ footer,
 /* 交互文字与 Word 中特殊的加粗、下划线内容仍使用原来的强调蓝。 */
 .word-emph,
 .word-underline { color:var(--blue); }
+
+
+/* ===== V2.9 手机端布局优化：仅 700px 及以下生效 =====
+   名称与日期同处第一行；单位/学院/奖项另起一行，完整保留所有文字。
+   特别长的名称允许自然换行（不省略），日期仍锁定第一行右侧。
+   平板及桌面布局完全沿用 V2.8，不受此规则影响。
+*/
+@media (max-width:700px){
+  .row-entry {padding:10px 2px 9px;}
+  #education .row-main,
+  #internships .row-main,
+  #projects .row-main,
+  #meetings .row-main,
+  #summer .row-main,
+  #competitions .row-main,
+  #honors .row-main,
+  #campus .row-main {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) max-content;
+    grid-template-rows:auto auto;
+    column-gap:clamp(6px,2vw,12px);
+    row-gap:2px;
+    align-items:start;
+    min-width:0;
+  }
+  :is(#education,#internships,#projects,#meetings,#summer,#competitions,#honors,#campus) .row-main > .row-left {
+    grid-column:1;
+    grid-row:1;
+    min-width:0;
+    margin:0;
+    font-size:clamp(11px,3.1vw,12.5px);
+    line-height:1.45;
+    white-space:normal;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  :is(#education,#internships,#projects,#meetings,#summer,#competitions,#honors,#campus) .row-main > time {
+    grid-column:2;
+    grid-row:1;
+    justify-self:end;
+    align-self:start;
+    margin:1px 0 0;
+    color:#000;
+    font-size:clamp(10.5px,2.8vw,11.5px);
+    line-height:1.45;
+    font-variant-numeric:tabular-nums;
+    text-align:right;
+    white-space:nowrap;
+  }
+  :is(#education,#internships,#projects,#meetings,#summer,#competitions,#honors,#campus) .row-main > .row-middle {
+    grid-column:1 / -1;
+    grid-row:2;
+    min-width:0;
+    margin:1px 0 0;
+    color:#000;
+    font-size:clamp(11px,3vw,12.5px);
+    line-height:1.5;
+    white-space:normal;
+    text-align:left;
+  }
+  #education .row-main > .row-middle {
+    display:flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:1px 8px;
+  }
+  #education .edu-sep {display:none;}
+  #education .row-middle .edu-school,
+  #education .row-middle .edu-college,
+  #education .row-middle .edu-major {
+    color:#000;
+    font-size:inherit;
+    font-weight:700;
+    line-height:1.5;
+    white-space:nowrap;
+    text-align:left;
+  }
+  /* 发表论文较长的作者/题名可换行，但年份固定在首行右侧。 */
+  .publication-line1 {
+    grid-template-columns:minmax(0,1fr) max-content;
+    column-gap:9px;
+    align-items:start;
+  }
+  .publication-citation {
+    min-width:0;
+    font-size:clamp(12px,3.35vw,13px);
+    line-height:1.5;
+    overflow-wrap:anywhere;
+  }
+  .publication-line1 time {
+    margin-top:2px;
+    text-align:right;
+    font-size:clamp(10.5px,2.8vw,11.5px);
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+}
+@media(max-width:360px){
+  .row-main {column-gap:5px;}
+  #education .row-main > .row-middle {gap:1px 5px;}
+}
