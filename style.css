@@ -337,16 +337,20 @@ button,input{font:inherit}
 }
 
 
-/* 海报：桌面 4 张，手机 2 张；整体更小 */
+/* V2.4 海报：随容器宽度自适应列数、均分列宽，限制单张最大尺寸 */
 .poster-gallery{
- width:min(860px,100%);
+ width:100%;
  display:grid;
- grid-template-columns:repeat(4,minmax(0,1fr));
- gap:14px 16px;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));
+ gap:clamp(12px,1.8vw,24px);
+ align-items:start;
 }
 .poster-card{
  margin:0;
  min-width:0;
+ max-width:220px;
+ width:100%;
+ justify-self:center;
 }
 .poster-thumb{
  width:100%;
@@ -379,13 +383,18 @@ button,input{font:inherit}
 
 
 /* PDF：两列，线条风，不用卡片阴影 */
+/* V2.4 PDF：按视窗自动调整列数和相对空间，卡片宽度有限制 */
 .pdf-grid{
  display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:18px 22px;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+ gap:clamp(16px,2vw,28px);
+ align-items:start;
 }
 .pdf-card{
  min-width:0;
+ width:100%;
+ max-width:520px;
+ justify-self:center;
  padding:0 0 13px;
  border-bottom:1px solid var(--blue);
 }
