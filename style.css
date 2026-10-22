@@ -1300,11 +1300,13 @@ footer,
   #education .row-main > .row-middle {gap:1px 5px;}
 }
 
-/* V2.12: 论文标题行采用蓝色，保留期刊信息与日期的黑色设置 */
+/* V2.13: 仅论文编号使用蓝色；作者与题目维持普通黑色，原有特殊强调保留蓝色。 */
 #publications .publication-citation,
 #working .working-title {
-  color: var(--blue, #0b4fa2);
+  color: var(--black, #000000);
 }
+#publications .publication-citation > strong:first-child,
 #working .working-paper-number {
+  color: var(--blue, #0b4fa2);
   white-space: nowrap;
 }
