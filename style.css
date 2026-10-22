@@ -1299,3 +1299,12 @@ footer,
   .row-main {column-gap:5px;}
   #education .row-main > .row-middle {gap:1px 5px;}
 }
+
+/* V2.12: 论文标题行采用蓝色，保留期刊信息与日期的黑色设置 */
+#publications .publication-citation,
+#working .working-title {
+  color: var(--blue, #0b4fa2);
+}
+#working .working-paper-number {
+  white-space: nowrap;
+}
